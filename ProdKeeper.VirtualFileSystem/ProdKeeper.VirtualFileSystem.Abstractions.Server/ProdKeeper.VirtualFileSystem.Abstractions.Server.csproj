@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProdKeeper.VirtualFileSystem.Abstractions.Client\ProdKeeper.VirtualFileSystem.Abstractions.Client.csproj" />
+    <ProjectReference Include="..\ProdKeeper.VirtualFileSystem.Abstractions\ProdKeeper.VirtualFileSystem.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

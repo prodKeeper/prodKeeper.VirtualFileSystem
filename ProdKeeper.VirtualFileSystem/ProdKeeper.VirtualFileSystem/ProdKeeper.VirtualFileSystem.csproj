@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProdKeeper.VirtualFileSystem.Abstractions.Client\ProdKeeper.VirtualFileSystem.Abstractions.Client.csproj" />
+    <ProjectReference Include="..\ProdKeeper.VirtualFileSystem.Abstractions.Server\ProdKeeper.VirtualFileSystem.Abstractions.Server.csproj" />
+  </ItemGroup>
+
+</Project>
