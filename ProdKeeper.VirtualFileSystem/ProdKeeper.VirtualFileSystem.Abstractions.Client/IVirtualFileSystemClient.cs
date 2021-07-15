@@ -7,7 +7,7 @@ namespace ProdKeeper.VirtualFileSystem.Abstractions.Client
 {
     public interface IVirtualFileSystemClient
     {
-        string Name { get; set; }
-        IVirtualFileSystem FileSystem { get; set; }
+        string Name { get; }
+        IVirtualFileSystem FileSystem { get; }
     }
 }

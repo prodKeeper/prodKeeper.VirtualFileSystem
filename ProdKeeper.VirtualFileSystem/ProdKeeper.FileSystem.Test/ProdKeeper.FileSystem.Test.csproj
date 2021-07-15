@@ -8,8 +8,4 @@
     <ProjectReference Include="..\ProdKeeper.VirtualFileSystem.Abstractions.Server\ProdKeeper.VirtualFileSystem.Abstractions.Server.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Command\" />
-  </ItemGroup>
-
 </Project>

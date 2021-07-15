@@ -4,17 +4,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProdKeeper.FileSystem.WebDav
+namespace ProdKeeper.FileSystem.Test
 {
     public class Server : IVirtualFileSystemServer
     {
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Name => "Test File SystemServer";
 
-        public int Port => throw new NotImplementedException();
+        public bool Listen { get; set; }
+
+        public int Port => 8080;
 
         public ICommand[] Commands => throw new NotImplementedException();
-
-        public bool Listen { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public ICommand KeepAlive => throw new NotImplementedException();
 

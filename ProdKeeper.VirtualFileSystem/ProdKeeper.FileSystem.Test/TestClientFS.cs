@@ -4,15 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProdKeeper.FileSystem.SMB
+namespace ProdKeeper.FileSystem.Test
 {
-    public class FileSystem : IVirtualFileSystem
+    public class TestClientFS : IVirtualFileSystem
     {
-        public VFSStatus CloseFile()
-        {
-            throw new NotImplementedException();
-        }
-
         public VFSStatus CloseFile(IVirtualFile fileHandler)
         {
             throw new NotImplementedException();
@@ -23,17 +18,7 @@ namespace ProdKeeper.FileSystem.SMB
             throw new NotImplementedException();
         }
 
-        public VFSStatus FlushFileBuffer()
-        {
-            throw new NotImplementedException();
-        }
-
         public VFSStatus FlushFileBuffer(IVirtualFile fileHandler)
-        {
-            throw new NotImplementedException();
-        }
-
-        public VFSStatus GetFileInformation()
         {
             throw new NotImplementedException();
         }
@@ -43,17 +28,7 @@ namespace ProdKeeper.FileSystem.SMB
             throw new NotImplementedException();
         }
 
-        public VFSStatus GetFileSystemInformation()
-        {
-            throw new NotImplementedException();
-        }
-
         public VFSStatus GetFileSystemInformation(IVirtualFile fileHandler)
-        {
-            throw new NotImplementedException();
-        }
-
-        public VFSStatus QueryDirectory()
         {
             throw new NotImplementedException();
         }
@@ -63,17 +38,7 @@ namespace ProdKeeper.FileSystem.SMB
             throw new NotImplementedException();
         }
 
-        public VFSStatus ReadFile()
-        {
-            throw new NotImplementedException();
-        }
-
         public VFSStatus ReadFile(IVirtualFile fileHandler)
-        {
-            throw new NotImplementedException();
-        }
-
-        public VFSStatus SetFileInformation()
         {
             throw new NotImplementedException();
         }
@@ -83,17 +48,7 @@ namespace ProdKeeper.FileSystem.SMB
             throw new NotImplementedException();
         }
 
-        public VFSStatus SetFileSystemInformation()
-        {
-            throw new NotImplementedException();
-        }
-
         public VFSStatus SetFileSystemInformation(IVirtualFile fileHandler)
-        {
-            throw new NotImplementedException();
-        }
-
-        public VFSStatus WriteFile()
         {
             throw new NotImplementedException();
         }

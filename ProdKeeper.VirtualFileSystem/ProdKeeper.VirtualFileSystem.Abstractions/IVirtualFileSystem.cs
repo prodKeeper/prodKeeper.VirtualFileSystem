@@ -7,18 +7,18 @@ namespace ProdKeeper.VirtualFileSystem.Abstraction
 {
     public interface IVirtualFileSystem
     {
-        VFSStatus CreateFile();
-        //VFSStatus CloseFile();
-        VFSStatus ReadFile();
-        VFSStatus WriteFile();
-        VFSStatus FlushFileBuffer();
+        VFSStatus CreateFileHandler(out IVirtualFile fileHandler);
+        VFSStatus CloseFile(IVirtualFile fileHandler);
+        VFSStatus ReadFile(IVirtualFile fileHandler);
+        VFSStatus WriteFile(IVirtualFile fileHandler);
+        VFSStatus FlushFileBuffer(IVirtualFile fileHandler);
         //VFSStatus LockFile();
         //VFSStatus UnlockFile();
-        VFSStatus QueryDirectory();
-        VFSStatus GetFileInformation();
-        VFSStatus SetFileInformation();
-        VFSStatus GetFileSystemInformation();
-        VFSStatus SetFileSystemInformation();
+        VFSStatus QueryDirectory(IVirtualFile fileHandler);
+        VFSStatus GetFileInformation(IVirtualFile fileHandler);
+        VFSStatus SetFileInformation(IVirtualFile fileHandler);
+        VFSStatus GetFileSystemInformation(IVirtualFile fileHandler);
+        VFSStatus SetFileSystemInformation(IVirtualFile fileHandler);
         //VFSStatus GetSecurityInformation();
         //VFSStatus SetSecurityInformation();
         //VFSStatus NotifyChange();

@@ -3,23 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeper.VirtualFileSystem", "ProdKeeper.VirtualFileSystem\ProdKeeper.VirtualFileSystem.csproj", "{932FA956-2D20-4088-B1D3-B44618CE5B0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdKeeper.VirtualFileSystem", "ProdKeeper.VirtualFileSystem\ProdKeeper.VirtualFileSystem.csproj", "{932FA956-2D20-4088-B1D3-B44618CE5B0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeper.VFSTest", "ProdKeeper.VFSTest\ProdKeeper.VFSTest.csproj", "{9697FC50-D4F6-4B7E-8A2F-75DB734C53A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdKeeper.VFSTest", "ProdKeeper.VFSTest\ProdKeeper.VFSTest.csproj", "{9697FC50-D4F6-4B7E-8A2F-75DB734C53A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeper.FileSystem.SMB", "ProdKeeper.FileSystem.SMB\ProdKeeper.FileSystem.SMB.csproj", "{F09C6332-F991-4C93-9F79-928889A42953}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdKeeper.FileSystem.SMB", "ProdKeeper.FileSystem.SMB\ProdKeeper.FileSystem.SMB.csproj", "{F09C6332-F991-4C93-9F79-928889A42953}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeper.FileSystem.FTP", "ProdKeeper.FileSystem.FTP\ProdKeeper.FileSystem.FTP.csproj", "{2ADFC33E-2AC7-4673-A291-06BC71198350}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdKeeper.FileSystem.FTP", "ProdKeeper.FileSystem.FTP\ProdKeeper.FileSystem.FTP.csproj", "{2ADFC33E-2AC7-4673-A291-06BC71198350}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeper.FileSystem.WebDav", "ProdKeeper.FileSystem.WebDav\ProdKeeper.FileSystem.WebDav.csproj", "{E0FC95F7-6340-4F70-B970-E4BE493637BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdKeeper.FileSystem.WebDav", "ProdKeeper.FileSystem.WebDav\ProdKeeper.FileSystem.WebDav.csproj", "{E0FC95F7-6340-4F70-B970-E4BE493637BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeper.FileSystem.SSH", "ProdKeeper.FileSystem.SSH\ProdKeeper.FileSystem.SSH.csproj", "{8529DBD8-3FB2-4109-8642-A979B108F10D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdKeeper.FileSystem.SSH", "ProdKeeper.FileSystem.SSH\ProdKeeper.FileSystem.SSH.csproj", "{8529DBD8-3FB2-4109-8642-A979B108F10D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeper.VirtualFileSystem.Abstractions", "ProdKeeper.VirtualFileSystem.Abstractions\ProdKeeper.VirtualFileSystem.Abstractions.csproj", "{CF7DB6E3-5861-4E2F-8905-5B919B2F0557}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdKeeper.VirtualFileSystem.Abstractions", "ProdKeeper.VirtualFileSystem.Abstractions\ProdKeeper.VirtualFileSystem.Abstractions.csproj", "{CF7DB6E3-5861-4E2F-8905-5B919B2F0557}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeper.VirtualFileSystem.Abstractions.Server", "ProdKeeper.VirtualFileSystem.Abstractions.Server\ProdKeeper.VirtualFileSystem.Abstractions.Server.csproj", "{FB02A2B8-2D01-4AAF-98E7-EBAB80E4251B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdKeeper.VirtualFileSystem.Abstractions.Server", "ProdKeeper.VirtualFileSystem.Abstractions.Server\ProdKeeper.VirtualFileSystem.Abstractions.Server.csproj", "{FB02A2B8-2D01-4AAF-98E7-EBAB80E4251B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeper.VirtualFileSystem.Abstractions.Client", "ProdKeeper.VirtualFileSystem.Abstractions.Client\ProdKeeper.VirtualFileSystem.Abstractions.Client.csproj", "{01BFF576-6A13-4D84-87DA-88B55AB31D73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdKeeper.VirtualFileSystem.Abstractions.Client", "ProdKeeper.VirtualFileSystem.Abstractions.Client\ProdKeeper.VirtualFileSystem.Abstractions.Client.csproj", "{01BFF576-6A13-4D84-87DA-88B55AB31D73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProdKeeper.FileSystem.Test", "ProdKeeper.FileSystem.Test\ProdKeeper.FileSystem.Test.csproj", "{97180B70-4210-4F1C-9069-60F712D2CB9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{01BFF576-6A13-4D84-87DA-88B55AB31D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01BFF576-6A13-4D84-87DA-88B55AB31D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01BFF576-6A13-4D84-87DA-88B55AB31D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97180B70-4210-4F1C-9069-60F712D2CB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97180B70-4210-4F1C-9069-60F712D2CB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97180B70-4210-4F1C-9069-60F712D2CB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97180B70-4210-4F1C-9069-60F712D2CB9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

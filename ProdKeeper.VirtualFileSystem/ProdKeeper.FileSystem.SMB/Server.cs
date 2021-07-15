@@ -8,7 +8,19 @@ namespace ProdKeeper.FileSystem.SMB
 {
     public class Server : IVirtualFileSystemServer
     {
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Name { get { return "SMB server"; } }
+        public int Port { get { return 445; } }
+
+        public Server()
+        {
+            this.Listen = true;
+        }
+
+        public ICommand[] Commands => throw new NotImplementedException();
+
+        public bool Listen { get; set; }
+
+        public ICommand KeepAlive => throw new NotImplementedException();
 
         public bool AddShare(IVirtualFileSystemShared share)
         {

@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ProdKeeper.FileSystem.SMB\ProdKeeper.FileSystem.SMB.csproj" />
     <ProjectReference Include="..\ProdKeeper.VirtualFileSystem\ProdKeeper.VirtualFileSystem.csproj" />
   </ItemGroup>
 

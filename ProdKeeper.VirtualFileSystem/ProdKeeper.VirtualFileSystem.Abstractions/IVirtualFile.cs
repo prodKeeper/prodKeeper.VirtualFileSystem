@@ -7,6 +7,7 @@ namespace ProdKeeper.VirtualFileSystem.Abstractions
 {
     public interface IVirtualFile
     {
+        long Handle { get; set; }
         string Path { get; set; }
         bool IsDirectory { get; set; }
 
