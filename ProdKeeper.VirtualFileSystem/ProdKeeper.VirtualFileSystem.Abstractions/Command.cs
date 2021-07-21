@@ -2,16 +2,20 @@
 
 namespace ProdKeeper.VirtualFileSystem.Abstractions
 {
-    public class Command<IHeader, IBody> : ICommand<IHeader, IBody>
+    public abstract class Command : ICommand
     {
+        public Command()
+        {
+            Header = null;
+            Body = null;
+        }
+        public Command(IHeader header, IBody body)
+        {
+            Header = header;
+            Body = body;
+        }
         public IHeader Header { get; set; }
         public IBody Body { get ; set; }
 
-        public virtual ICommand<IHeader, IBody> Parse(byte[] MessageContent)
-        {
-            this.Body = Body;
-            this.Header = Header;
-            return this;
-        }
     }
 }

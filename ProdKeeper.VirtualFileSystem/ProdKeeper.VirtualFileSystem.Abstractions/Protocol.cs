@@ -6,24 +6,23 @@ using System.Threading.Tasks;
 
 namespace ProdKeeper.VirtualFileSystem.Abstractions
 {
-    public abstract class Protocol<TMessageType> : IProtocol<TMessageType> 
-        where TMessageType:ICommand<IHeader,IBody>, new()
+    public abstract class Protocol<TCommand> : IProtocol<TCommand> where TCommand:Command, new()
     {
         protected abstract int HeaderSize { get; }
-        public async Task<TMessageType> ReceiveAsync(NetworkStream networkStream)
+        public async Task<TCommand> ReceiveAsync(NetworkStream networkStream)
         {
-            TMessageType commandType = new TMessageType();
+            TCommand commandType = new TCommand();
             commandType.Header = await ReadHeader(networkStream).ConfigureAwait(false);
             AssertValidMessageLength(commandType.Header.BodyLength);
             commandType.Body = await ReadBody(networkStream, commandType.Header.BodyLength);
             return commandType;
         }
 
-        public TMessageType ProcessMessage<TCommandType>(TCommandType message) where TCommandType : TMessageType, new()
+        public TCommand ProcessMessage(TCommand message)
         {
             return message;
         }
-        public async Task SendAsync(NetworkStream networkStream, TMessageType message) 
+        public async Task SendAsync(NetworkStream networkStream, TCommand message)
         {
             var (header, body) = Encode(message);
             await networkStream.WriteAsync(header, 0, header.Length);
@@ -58,16 +57,17 @@ namespace ProdKeeper.VirtualFileSystem.Abstractions
         }
 
 
-        protected (byte[] header, byte[] body) Encode(TMessageType message)
+        protected (byte[] header, byte[] body) Encode(Command message)
         {
 
-            var bodyBytes = EncodeBody<TMessageType>(message);
-            var headerBytes = BitConverter.GetBytes(IPAddress.HostToNetworkOrder(bodyBytes.Length));
+            var bodyBytes = EncodeBody(message);
+            var headerBytes = EncodeHeader(message);
             return (headerBytes, bodyBytes);
         }
         protected abstract IBody DecodeBody(byte[] message);
         protected abstract IHeader DecodeHeader(byte[] message);
-        protected abstract byte[] EncodeBody<T>(T message);
+        protected abstract byte[] EncodeBody(Command message);
+        protected abstract byte[] EncodeHeader(Command message);
         protected virtual void AssertValidMessageLength(int messageLength)
         {
             if (messageLength < 1)

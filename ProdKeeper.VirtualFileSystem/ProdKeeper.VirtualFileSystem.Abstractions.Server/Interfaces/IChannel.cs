@@ -12,8 +12,6 @@ namespace ProdKeeper.VirtualFileSystem.Abstractions.Server.Interfaces
         int Port { get; }
         string Name { get; }
 
-        Protocol<Command<IHeader, IBody>> Protocol { get; }
-
         void Start();
         Task Process(Socket socket);
     }

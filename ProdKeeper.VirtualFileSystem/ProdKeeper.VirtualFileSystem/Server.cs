@@ -7,18 +7,19 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using ProdKeeper.VirtualFileSystem.Abstractions.Server;
+using ProdKeeper.VirtualFileSystem.Abstractions;
 
 namespace ProdKeeper.VirtualFileSystem
 {
     public class Server
     {
         private List<Thread> _threads;
-        private List<Channel> _channels;
+        private List<IChannel> _channels;
 
         public void Start()
         {
-            foreach (Channel serv in _channels)
-            {
+            foreach (IChannel serv in _channels)
+            { 
                 Thread thread = new Thread(new ParameterizedThreadStart(StartServer));
                 thread.Start(serv);
                 _threads.Add(thread);
@@ -32,7 +33,7 @@ namespace ProdKeeper.VirtualFileSystem
             
         }
 
-        public void AddChannel(Channel Channel)
+        public void AddChannel<TCommand>(Channel<TCommand> Channel) where TCommand:Command,new()
         {
             bool alreadyAssign = (from c in _channels where c.Port == Channel.Port select c).FirstOrDefault() != null;
             if (alreadyAssign)
@@ -45,7 +46,7 @@ namespace ProdKeeper.VirtualFileSystem
         private void StartServer(object channel)
         {
 
-            Channel chan = (Channel)channel;
+            IChannel chan = (IChannel)channel;
             chan.Start();
         }
 

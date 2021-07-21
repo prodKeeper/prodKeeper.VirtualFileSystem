@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 
 namespace ProdKeeper.VirtualFileSystem.Abstractions.Interfaces
 {
-    public interface IProtocol<TMessageType> where TMessageType : ICommand<IHeader, IBody>
+    public interface IProtocol<TCommand> where TCommand:Command, new()
     {
-        Task<TMessageType> ReceiveAsync(NetworkStream networkStream);
-        Task SendAsync(NetworkStream networkStream, TMessageType message);
+        Task<TCommand> ReceiveAsync(NetworkStream networkStream);
+        Task SendAsync(NetworkStream networkStream, TCommand message);
 
-        TMessageType ProcessMessage<TCommandType>(TCommandType message) where TCommandType : TMessageType, new();
+        TCommand ProcessMessage(TCommand message);
     }
 }

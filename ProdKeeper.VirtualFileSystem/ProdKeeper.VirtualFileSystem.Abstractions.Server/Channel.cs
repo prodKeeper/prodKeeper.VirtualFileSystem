@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 
 namespace ProdKeeper.VirtualFileSystem.Abstractions.Server
 {
-    public abstract class Channel : IChannel
+    public abstract class Channel<TCommand> : IChannel where TCommand:Command, new()
     {
+
         public abstract int Port { get; }
 
         public abstract string Name { get; }
 
-        public abstract Protocol<Command<IHeader, IBody>> Protocol { get; } 
+        public abstract Protocol<TCommand> Protocol { get; }
+        
 
         public async Task Process(Socket socket)
         {
