@@ -7,12 +7,7 @@ namespace ProdKeeper.FileSystem.Test
 {
     public class Header : IHeader
     {
-        public int BodyLength { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public byte[] Content { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public void Parse(byte[] content)
-        {
-            throw new NotImplementedException();
-        }
+        public int BodyLength { get; set; }
+        public byte[] Content { get; set; }
     }
 }

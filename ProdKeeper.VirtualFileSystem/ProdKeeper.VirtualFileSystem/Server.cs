@@ -16,8 +16,17 @@ namespace ProdKeeper.VirtualFileSystem
         private List<Thread> _threads;
         private List<IChannel> _channels;
 
+        public Server()
+        {
+            _threads = new List<Thread>();
+            _channels = new List<IChannel>();
+        }
+
         public void Start()
         {
+            Console.WriteLine("Start Server.......");
+
+
             foreach (IChannel serv in _channels)
             { 
                 Thread thread = new Thread(new ParameterizedThreadStart(StartServer));
@@ -47,6 +56,7 @@ namespace ProdKeeper.VirtualFileSystem
         {
 
             IChannel chan = (IChannel)channel;
+            Console.WriteLine("Start Channel {0} on port {1}.......",chan.Name, chan.Port);
             chan.Start();
         }
 

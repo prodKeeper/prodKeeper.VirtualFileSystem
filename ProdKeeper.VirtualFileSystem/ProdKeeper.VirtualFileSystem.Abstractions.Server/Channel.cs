@@ -29,7 +29,7 @@ namespace ProdKeeper.VirtualFileSystem.Abstractions.Server
                     null
                     ).ConfigureAwait(false);
 
-                Console.WriteLine("Echo server:: Client Connected");
+                Console.WriteLine("Server:: Client Connected");
                 List<byte> byteReceived = new List<byte>();
                 using (var stream = new NetworkStream(clientSocket, true))
                 {

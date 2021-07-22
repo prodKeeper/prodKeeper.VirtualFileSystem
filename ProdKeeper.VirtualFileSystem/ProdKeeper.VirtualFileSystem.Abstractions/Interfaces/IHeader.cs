@@ -9,7 +9,5 @@ namespace ProdKeeper.VirtualFileSystem.Abstractions.Interfaces
         int BodyLength { get; set; }
         byte[] Content { get; set; }
 
-        void Parse(byte[] content);
-
     }
 }

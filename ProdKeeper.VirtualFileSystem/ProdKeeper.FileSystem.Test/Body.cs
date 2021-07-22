@@ -7,6 +7,6 @@ namespace ProdKeeper.FileSystem.Test
 {
     public class Body : IBody
     {
-        public byte[] Content { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public byte[] Content { get; set; }
     }
 }

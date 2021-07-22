@@ -1,4 +1,5 @@
-﻿using ProdKeeper.VirtualFileSystem;
+﻿using ProdKeeper.FileSystem.Test;
+using ProdKeeper.VirtualFileSystem;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,8 +11,10 @@ namespace ProdKeeper.VFSTest
         public static void Main()
         {
             Server server = new Server();
-
+            ChannelTest test = new ChannelTest();
+            server.AddChannel(test);
             server.Start();
+            Console.ReadLine();
         }
     }
 }

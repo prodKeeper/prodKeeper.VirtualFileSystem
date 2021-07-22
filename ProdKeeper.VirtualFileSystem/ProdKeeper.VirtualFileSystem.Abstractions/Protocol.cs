@@ -18,7 +18,7 @@ namespace ProdKeeper.VirtualFileSystem.Abstractions
             return commandType;
         }
 
-        public TCommand ProcessMessage(TCommand message)
+        public virtual TCommand ProcessMessage(TCommand message)
         {
             return message;
         }
