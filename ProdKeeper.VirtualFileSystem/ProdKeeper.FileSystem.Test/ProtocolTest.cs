@@ -45,21 +45,12 @@ namespace ProdKeeper.FileSystem.Test
 
         public override CommandTest ProcessMessage(CommandTest message)
         {
-            var str = System.Text.Encoding.UTF8.GetString(message.Body.Content);
-            var sr = new StringReader(str);
-            var xs = new XmlSerializer(typeof(MyMessage));
-            MyMessage mm = (MyMessage)xs.Deserialize(sr);
-
-            mm.IntProperty = mm.IntProperty + 4;
-            mm.StringProperty = mm.StringProperty + " Processed";
-
-            var sb2 = new StringBuilder();
-            var sw2 = new StringWriter(sb2);
-            var xs2 = new XmlSerializer(typeof(MyMessage));
-            xs.Serialize(sw2, mm);
-            CommandTest msgReturn = new CommandTest();
+            Body body = (Body)message.Body;
+            MyMessage mm = new MyMessage();
+            mm.IntProperty = body.Valeur.IntProperty + 4;
+            mm.StringProperty = body.Valeur.StringProperty + " Processed";
+            ((Body)message.Body).Valeur = mm;
             
-            message.Body.Content = Encoding.UTF8.GetBytes(sb2.ToString());
             return message;
 
         }
