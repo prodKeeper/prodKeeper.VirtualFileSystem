@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProdKeeper.VirtualFileSystem.Abstractions.Interfaces
 {
-    public interface ICommand 
+    public interface IMessage 
     {
         IHeader Header { get; set; }
         IBody Body { get; set; }

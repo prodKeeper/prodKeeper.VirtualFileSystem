@@ -7,12 +7,12 @@ using System.Text;
 
 namespace ProdKeeper.FileSystem.Test
 {
-    public class ChannelTest : Channel<CommandTest>
+    public class ChannelTest : Channel<MessageTest>
     {
         public override int Port => 9090;
 
         public override string Name => "Test Serveur";
 
-        public override Protocol<CommandTest> Protocol => new ProtocolTest();
+        public override Protocol<MessageTest> Protocol => new ProtocolTest();
     }
 }

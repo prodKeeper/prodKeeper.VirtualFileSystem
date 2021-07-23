@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProdKeeper.VirtualFileSystem.Abstractions.Server
 {
-    public abstract class Channel<TCommand> : IChannel where TCommand:Command, new()
+    public abstract class Channel<TCommand> : IChannel where TCommand:Message, new()
     {
 
         public abstract int Port { get; }
@@ -42,9 +42,10 @@ namespace ProdKeeper.VirtualFileSystem.Abstractions.Server
             } while (true);
         }
 
-        public void Start()
+        public void Start(IPEndPoint endPoint=null)
         {
-            var endPoint = new IPEndPoint(IPAddress.Loopback, Port);
+            if(endPoint==null)
+                endPoint = new IPEndPoint(IPAddress.Loopback, Port);
             var socket = new Socket(endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
             socket.Bind(endPoint);
             socket.Listen(128);

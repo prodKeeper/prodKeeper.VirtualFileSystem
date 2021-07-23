@@ -6,9 +6,9 @@ using System.Text;
 
 namespace ProdKeeper.FileSystem.Test
 {
-    public class CommandTest : Command
+    public class MessageTest : Message
     {
-        public CommandTest() { }
-        public CommandTest(Header h, Body b) : base(h, b) { }
+        public MessageTest() { }
+        public MessageTest(Header h, Body b) : base(h, b) { }
     }
 }

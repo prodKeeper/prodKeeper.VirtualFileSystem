@@ -12,7 +12,7 @@ using System.Xml.Serialization;
 
 namespace ProdKeeper.FileSystem.Test
 {
-    public class ProtocolTest : Protocol<CommandTest>
+    public class ProtocolTest : Protocol<MessageTest>
     {
         protected override int HeaderSize => 4;
 
@@ -32,18 +32,18 @@ namespace ProdKeeper.FileSystem.Test
 
         }
 
-        protected override byte[] EncodeBody(Command message)
+        protected override byte[] EncodeBody(Message message)
         {
             return message.Body.Content;
         }
 
-        protected override byte[] EncodeHeader(Command message)
+        protected override byte[] EncodeHeader(Message message)
         {
             ;
             return BitConverter.GetBytes(IPAddress.HostToNetworkOrder(message.Body.Content.Length));
         }
 
-        public override CommandTest ProcessMessage(CommandTest message)
+        public override MessageTest ProcessMessage(MessageTest message)
         {
             Body body = (Body)message.Body;
             MyMessage mm = new MyMessage();

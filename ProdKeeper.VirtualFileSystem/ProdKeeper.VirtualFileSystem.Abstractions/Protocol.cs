@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProdKeeper.VirtualFileSystem.Abstractions
 {
-    public abstract class Protocol<TCommand> : IProtocol<TCommand> where TCommand:Command, new()
+    public abstract class Protocol<TCommand> : IProtocol<TCommand> where TCommand:Message, new()
     {
         protected abstract int HeaderSize { get; }
         public async Task<TCommand> ReceiveAsync(NetworkStream networkStream)
@@ -57,7 +57,7 @@ namespace ProdKeeper.VirtualFileSystem.Abstractions
         }
 
 
-        protected (byte[] header, byte[] body) Encode(Command message)
+        protected (byte[] header, byte[] body) Encode(Message message)
         {
 
             var bodyBytes = EncodeBody(message);
@@ -66,8 +66,8 @@ namespace ProdKeeper.VirtualFileSystem.Abstractions
         }
         protected abstract IBody DecodeBody(byte[] message);
         protected abstract IHeader DecodeHeader(byte[] message);
-        protected abstract byte[] EncodeBody(Command message);
-        protected abstract byte[] EncodeHeader(Command message);
+        protected abstract byte[] EncodeBody(Message message);
+        protected abstract byte[] EncodeHeader(Message message);
         protected virtual void AssertValidMessageLength(int messageLength)
         {
             if (messageLength < 1)

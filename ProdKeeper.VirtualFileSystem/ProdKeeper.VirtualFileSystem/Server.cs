@@ -42,7 +42,7 @@ namespace ProdKeeper.VirtualFileSystem
             
         }
 
-        public void AddChannel<TCommand>(Channel<TCommand> Channel) where TCommand:Command,new()
+        public void AddChannel<TCommand>(Channel<TCommand> Channel) where TCommand:Message,new()
         {
             bool alreadyAssign = (from c in _channels where c.Port == Channel.Port select c).FirstOrDefault() != null;
             if (alreadyAssign)

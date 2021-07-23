@@ -2,20 +2,20 @@
 
 namespace ProdKeeper.VirtualFileSystem.Abstractions
 {
-    public abstract class Command : ICommand
+    public abstract class Message : IMessage
     {
-        public Command()
+        public Message()
         {
             Header = null;
             Body = null;
         }
-        public Command(IHeader header, IBody body)
+        public Message(IHeader header, IBody body)
         {
             Header = header;
             Body = body;
         }
-        public IHeader Header { get; set; }
-        public IBody Body { get ; set; }
+        public virtual IHeader Header { get; set; }
+        public virtual IBody Body { get ; set; }
 
     }
 }
